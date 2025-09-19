@@ -2,6 +2,7 @@ import { SlLocationPin } from "react-icons/sl";
 import { BsSearch } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
 import styles from "./Header.module.css";
+import { Link } from "react-router-dom";
 import LowerHeader from "./LowerHeader";
 const Header = () => {
   return (
@@ -10,12 +11,12 @@ const Header = () => {
       {/* Top Section */}
       <div className={styles.topSection}>
         {/* Logo */}
-        <a href="/" className={styles.logo}>
+        <Link to ="/" className={styles.logo}>
           <img
             src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
             alt="Amazon Logo"
           />
-        </a>
+        </Link>
 
         {/* Delivery Info */}
         <div className={styles.delivery}>
@@ -56,26 +57,26 @@ const Header = () => {
         </div>
 
         {/* Account */}
-        <a href="#" className={styles.link}>
+        <Link to="#" className={styles.link}>
           <div>
             <p>Sign In</p>
             <span>Account & Lists</span>
           </div>
-        </a>
+        </Link>
 
         {/* Orders */}
-        <a href="#" className={styles.link}>
+        <Link to="/Orders" className={styles.link}>
           <div>
             <p>Returns</p>
             <span>& Orders</span>
           </div>
-        </a>
+        </Link>
 
         {/* Cart */}
-        <a href="#" className={styles.cart}>
+        <Link to="/Carts" className={styles.cart}>
             <BiCart size={35 } />
           <span>0</span>
-        </a>
+        </Link>
       </div>
       </header>
       <LowerHeader/>

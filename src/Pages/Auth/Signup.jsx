@@ -1,10 +1,10 @@
 import React from 'react'
 import classes from './Signup.module.css'
 
-function Signup() {
+function SignUp() {
   return (
     <div>Signup</div>
   )
 }
 
-export default Signup
+export default SignUp

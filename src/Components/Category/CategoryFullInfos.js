@@ -1,20 +1,20 @@
 export const CategoryInfos = [
-  {
+  {id:"1",
     title: "Electronics",
     name: "electronics",
     imgLink: "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png",
   },
-  {
+  {id:"2",
     title: "Discover fashion trends",
     name: "Women's closing",
     imgLink: " https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_t.png",
   },
-  {
+  {id :"3",
     title: "Men's Clothing",
     name: "men's clothing",
     imgLink: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png",
   },
-  {
+  {id:"4",
     title: "Jewlery",
     name: "jewlery",
     imgLink:

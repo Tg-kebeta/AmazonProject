@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ProductCard from "./ProductCard";
 import styles from "./Product.module.css"
+import Loader from "../Loader/Loader"
 function Product() {
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     axios
@@ -11,20 +13,29 @@ function Product() {
       .then((res) => {
         // console.log(res.data.data);
         setProducts(res.data);
+        setIsLoading(false); 
       })
       .catch((error) => {
         console.log(error);
+         setIsLoading(false); 
       });
   }, []);
 
   return (
-    <section className={styles.productsContainer}>
-      {products.map((singleProduct) => (
-        <ProductCard product={singleProduct} data={singleProduct} />
-      ))}
-  
-    </section>
+    <>
+      {
+        isLoading ? (<Loader />) : (<section className={styles.productsContainer}>
+          {products?.map((singleProduct) => {
+            return <ProductCard product={singleProduct}key={singleProduct.id}/>
+          })}
+        </section>)
+     } 
+
+    </>
+    
   );
+    
+  
 }
 
 export default Product;

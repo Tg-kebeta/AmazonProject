@@ -2,13 +2,14 @@ import React from 'react'
 import { Rating } from "@mui/material";
 import CurrencyFormat from '../CurrencyFormat/CurrencyFormat';
 import styles from "./Product.module.css";
-const ProductCard = ({ product }) => {
+import { Link } from 'react-router-dom';
+const ProductCard = ({ product ,flex}) => {
   const {image,title,id,rating,price} =product
   return (
-    <section className={`${styles.cardContainer}`}>
-      <a href={`/product/${id}`}>
-        <img src={image} alt={title} />
-      </a>
+    <section className={`${styles.cardContainer} ${flex?styles.product_flexed : ''}`}>
+      <Link to={`/products/${id}`}>
+        <img src={image} alt={title ||"product image"} />
+      </Link>
       <div className={styles.rating}>
         <h3>{title}</h3>
         <div>
@@ -28,19 +29,4 @@ const ProductCard = ({ product }) => {
 }
 
 export default ProductCard
-// import React from "react";
-//
-// const ProductCard = ({ product }) => {
-//   if (!product) return null;
 
-//   return (
-//     <div>
-//       <h3>{product.title}</h3>
-//       <p>{product.description}</p>
-//       <img src={product.image} alt={product.title} />
-//       <p>${product.price}</p>
-//     </div>
-//   );
-// };
-
-// export default ProductCard;

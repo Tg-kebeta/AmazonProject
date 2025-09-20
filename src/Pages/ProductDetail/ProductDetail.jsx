@@ -31,7 +31,8 @@ setIsLoading(false)
       {isLoading?(<Loader/>):(<ProductCard
       
         product={product}
-  flex={true}    />)}
+        flex={true}
+    renderDesc={true}  />)}
       
     </LayOut>
   );

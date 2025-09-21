@@ -10,7 +10,7 @@ const ProductCard = ({ product ,flex,renderDesc}) => {
   const { image, title, id, rating, price, description } = product;
 
   const [ state, dispatch ]=useContext(DataContext)
-console.log(state)
+// console.log(state)
 
   const addToCart = () =>{
     dispatch(

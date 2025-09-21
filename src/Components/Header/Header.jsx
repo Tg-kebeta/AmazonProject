@@ -15,7 +15,7 @@ const Header = () => {
 
 
   return (
-    <>
+    <section className={styles.fixed}>
     <header className={styles.header}>
       {/* Top Section */}
       <div className={styles.topSection}>
@@ -82,14 +82,14 @@ const Header = () => {
         </Link>
 
         {/* Cart */}
-        <Link to="/Carts" className={styles.cart}>
+        <Link to="/Cart" className={styles.cart}>
             <BiCart size={35 } />
             <span>{basket.length}</span>
         </Link>
       </div>
       </header>
       <LowerHeader/>
-    </>
+    </section>
   );
 };
 

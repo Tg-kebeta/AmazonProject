@@ -26,7 +26,7 @@ function Product() {
       {
         isLoading ? (<Loader />) : (<section className={styles.productsContainer}>
           {products?.map((singleProduct) => {
-            return <ProductCard product={singleProduct}key={singleProduct.id}/>
+            return <ProductCard renderAdd={true} product={singleProduct}key={singleProduct.id}/>
           })}
         </section>)
      } 

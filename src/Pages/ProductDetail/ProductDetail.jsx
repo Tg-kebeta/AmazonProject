@@ -10,7 +10,7 @@ import Loader from '../../Components/Loader/Loader';
 
 function ProductDetail() {
   const { productId } = useParams()
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState([]);
   const [isLoading,setIsLoading]=useState(false)
   useEffect(() => {
     setIsLoading(true)
@@ -32,7 +32,8 @@ setIsLoading(false)
       
         product={product}
         flex={true}
-    renderDesc={true}  />)}
+        renderDesc={true}
+    renderAdd={true}  />)}
       
     </LayOut>
   );

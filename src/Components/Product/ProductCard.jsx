@@ -47,6 +47,7 @@ const ProductCard = ({ product ,flex,renderDesc}) => {
           {/* price */}
           <CurrencyFormat amount={price} />
         </div>
+        
         <button className={styles.button} onClick={addToCart}>add to cart</button>
       </div>
     </section>

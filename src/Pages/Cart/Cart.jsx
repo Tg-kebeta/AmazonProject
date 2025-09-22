@@ -7,13 +7,26 @@ import { Link } from 'react-router-dom'
 import CurrencyFormat from '../../Components/CurrencyFormat/CurrencyFormat';
 
 import styles from './Cart.module.css'
-
+import { Type } from "../../Utility/action.type";
+import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowUp } from "react-icons/io";
 function Cart() {
   const [{ basket, user }, dispatch] = useContext(DataContext);
   
   const total = basket.reduce((amount, item) => {
-  return  item.price + amount
-  },0)
+    return amount + item.price * item.amount;
+  }, 0);
+  const increment = (item) => {
+    dispatch({
+    type:Type.ADD_TO_BASKET,item
+  })
+}
+  const decrement = (id) => {
+    dispatch({
+    type:Type.REMOVE_FROM_BASKET,id
+  })
+}
+
 
   return (
     <LayOut>
@@ -25,21 +38,38 @@ function Cart() {
           {basket?.length === 0 ? (
             <p>Oops! No items in your cart</p>
           ) : (
-            basket.map((item) => (
-              <ProductCard
-                key={item.id}
-                product={item}
-                renderDesc={true}
-                renderAdd={false}
-                flex={true}
-              />
+            basket.map((item, i) => (
+              <section className={styles.cartProduct}>
+                <ProductCard
+                  key={item.id}
+                  product={item}
+                  renderDesc={true}
+                  renderAdd={false}
+                  flex={true}
+                />
+                <div className={styles.btnContainer}>
+                  <button
+                    className={styles.btn}
+                    onClick={() => increment(item)}
+                  >
+                    <IoIosArrowUp size={20}/>
+                  </button>
+                  <span>{item.amount}</span>
+                  <button
+                    className={styles.btn}
+                    onClick={() => decrement(item.id)}
+                  >
+                    <IoIosArrowDown size={20} />
+                  </button>
+                </div>
+              </section>
             ))
           )}
         </div>
-        {basket?.length !==0&& (
+        {basket?.length !== 0 && (
           <div className={styles.subtotal}>
             <div>
-              <p>subtotal({ basket?.length} items)</p>
+              <p>subtotal({basket?.length} items)</p>
               <CurrencyFormat amount={total} />
             </div>
             <span>
@@ -49,7 +79,6 @@ function Cart() {
             <Link to="/payments">Continue to checkout</Link>
           </div>
         )}
-  
       </section>
     </LayOut>
   );

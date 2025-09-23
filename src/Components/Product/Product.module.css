@@ -71,10 +71,10 @@
   display: none;
   padding: 0.6rem 1rem;
   background-color: var(--primary-color);
-  color: white;
+  color: white; 
   border: none;
   border-radius: 30px;
-  font-weight: 700;
+  /* font-weight: 700; */
   cursor: pointer;
   width: 100%;
   position: absolute;
@@ -85,6 +85,7 @@
 
 .button:hover {
   background-color: var(--primary-shade);
+  
 }
 
 /*  Expanded Product View */

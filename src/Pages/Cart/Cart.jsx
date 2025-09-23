@@ -36,7 +36,7 @@ function Cart() {
           <h3>Your Shopping Basket</h3>
           <hr />
           {basket?.length === 0 ? (
-            <p>Oops! No items in your cart</p>
+            <p>Your Amazon Cart is empty</p>
           ) : (
             basket.map((item, i) => (
               <section className={styles.cartProduct}>

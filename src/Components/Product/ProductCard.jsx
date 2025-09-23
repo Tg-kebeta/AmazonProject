@@ -6,11 +6,12 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { DataContext } from '../DataProvider/DataProvider';
 import { Type } from '../../Utility/action.type';
-const ProductCard = ({ product ,flex,renderDesc}) => {
+
+const ProductCard = ({ product ,flex,renderDesc,renderAdd}) => {
   const { image, title, id, rating, price, description } = product;
 
   const [ state, dispatch ]=useContext(DataContext)
-// console.log(state)
+
 
   const addToCart = () =>{
     dispatch(
@@ -22,21 +23,16 @@ const ProductCard = ({ product ,flex,renderDesc}) => {
     )
   }
 
-
-
-
-
-
-
-
   return (
-    <section className={`${styles.cardContainer} ${flex?styles.product_flexed : ''}`}>
+    <section
+      className={`${styles.cardContainer} ${flex ? styles.product_flexed : ""}`}
+    >
       <Link to={`/products/${id}`}>
-        <img src={image} alt={title ||"product image"} />
+        <img src={image} alt={title || "product image"} />
       </Link>
       <div className={styles.rating}>
         <h3>{title}</h3>
-        {renderDesc && <div style={{ maxWidth: "750px" }}>{description}</div>}
+        {renderDesc && (<div style={{ maxWidth: "750px" }}>{description}</div>)}
         <div>
           {/* rating */}
           <Rating value={rating?.rate} precision={0.1} />
@@ -47,8 +43,12 @@ const ProductCard = ({ product ,flex,renderDesc}) => {
           {/* price */}
           <CurrencyFormat amount={price} />
         </div>
-        
-        <button className={styles.button} onClick={addToCart}>add to cart</button>
+        {/* {renderAdd} */}
+        {renderAdd && (
+          <button className={styles.button} onClick={addToCart}>
+            add to cart
+          </button>
+        )}
       </div>
     </section>
   );

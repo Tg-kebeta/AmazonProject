@@ -1,10 +1,13 @@
 import React from 'react'
 import classes from './Signup.module.css'
+import LayOut from '../../Components/LayOut/LayOut'
 
 function SignUp() {
   return (
-    <div>Signup</div>
-  )
+    <LayOut>
+      <div>Signup</div>
+    </LayOut>
+  );
 }
 
 export default SignUp

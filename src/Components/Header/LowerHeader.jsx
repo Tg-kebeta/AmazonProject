@@ -1,9 +1,9 @@
 import React from 'react'
 import { AiOutlineMenu } from "react-icons/ai";
-import styles from './Header.module.css'
+import classes from './Header.module.css'
 const LowerHeader = () => {
   return (
-    <div className={styles.lowerContainer}>
+    <div className={classes.lower_container}>
       <ul>
         <li>
           <AiOutlineMenu />

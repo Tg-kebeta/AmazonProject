@@ -6,20 +6,22 @@ import styles from './CarouselEffect.module.css'
 const CarouselEffect = () => {
   return (
       <div>
-          <Carousel autoPlay={true}
-              infiniteLoop={true}
-              showIndicators={false}
-              showThumbs={false}>
-              {img.map((imageItemLink) => {
-                  return <img src={imageItemLink}/>
-              })}
-              
+      <Carousel
+        autoPlay={true}
+        infiniteLoop={true}
+        showInndicators={false}
+        showThumbs={false}
+      >
+        {img.map((imageItemLink) => {
+          return < img key= {imageItemLink} src={imageItemLink} />;
+        })
+        }
       </Carousel>
-      <div className={styles.heroImg}>
-
-      </div>
+      
     </div>
   )
 }
+  
+
 
 export default CarouselEffect;

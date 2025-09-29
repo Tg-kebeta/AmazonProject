@@ -9,15 +9,15 @@ const CarouselEffect = () => {
       <Carousel
         autoPlay={true}
         infiniteLoop={true}
-        showInndicators={false}
+        showIndicators={false}
         showThumbs={false}
       >
         {img.map((imageItemLink) => {
-          return < img key= {imageItemLink} src={imageItemLink} />;
+          return < img src={imageItemLink} />;
         })
         }
       </Carousel>
-      
+      <div className={styles.heroImg}></div>
     </div>
   )
 }

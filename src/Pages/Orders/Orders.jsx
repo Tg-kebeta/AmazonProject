@@ -26,7 +26,7 @@ function Orders() {
     } else {
       setOrders([]);
     }
-  }, []); // Also consider adding `user` to the dependency array
+  }, []); 
 
   return (
     <LayOut>

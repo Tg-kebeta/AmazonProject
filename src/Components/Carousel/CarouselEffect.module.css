@@ -9,7 +9,7 @@
     height: 300px;
     background-image: linear-gradient(
         to bottom,
-        rgba(225,225,255,0)
+        rgba(225,225,255,0),
         rgba(225,225,255)
     );
 }

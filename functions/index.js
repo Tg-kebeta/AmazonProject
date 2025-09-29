@@ -2,9 +2,9 @@
 
 
 
-const {setGlobalOptions} = require("firebase-functions");
+
 const {onRequest} = require("firebase-functions/https");
-const logger = require("firebase-functions/logger");
+// const logger = require("firebase-functions/logger");
 const express = require("express");
 const cors = require ("cors");
 const dotenv = require ("dotenv");

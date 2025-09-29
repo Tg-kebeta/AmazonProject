@@ -3,7 +3,7 @@ import LayOut from "../../Components/LayOut/LayOut";
 import { db } from "../../Utility/firebase";
 import { DataContext } from "../../Components/DataProvider/DataProvider";
 // import { use } from "react";
-import classes from "./orders.module.css";
+import classes from "./Orders.module.css";
 import ProductCard from "../../Components/Product/ProductCard";
 
 function Orders() {

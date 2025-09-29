@@ -1,9 +1,9 @@
 // import React from "react";
 import React, { useContext, useState } from "react";
 import LayOut from "../../Components/LayOut/LayOut";
-import classes from "./payment.module.css";
+import classes from "./Payment.module.css";
 import { DataContext } from "../../Components/DataProvider/DataProvider";
-import ProductCard from "../../Components/product/ProductCard";
+import ProductCard from "../../Components/Product/ProductCard";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import { red } from "@mui/material/colors";
 import CurrencyFormat from "../../Components/CurrencyFormat/CurrencyFormat";

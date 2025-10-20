@@ -78,7 +78,7 @@ function Payment() {
       {/* header */}
       <div className={classes.payment__header}>Checkout({totalItem})items</div>
       {/* payment method */}
-      <section className={classes.Payment}>
+      <section className={classes.PaymentSection}>
         {/* address */}
         <div className={classes.flex}>
           <h3>Delivery Adress</h3>

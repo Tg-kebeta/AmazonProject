@@ -1,30 +1,29 @@
-
-import  firebase from "firebase/compat/app";
-// import { getAuth } from "firebase/auth"
+import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
-import "firebase/compat/firestore"
-// import "firebase/compat/auth"
-// Your web app's Firebase configuration
+import "firebase/compat/firestore";
+
+// Firebase config from .env
 const firebaseConfig = {
-  apiKey: "AIzaSyBagKJy5xhew0xBXikm7xG7Euj2c8xOWnI",
-  authDomain: "clone-25510.firebaseapp.com",
-  projectId: "clone-25510",
-  storageBucket: "clone-25510.firebasestorage.app",
-  messagingSenderId: "915862455980",
-  appId: "1:915862455980:web:2adb7ed1c85aebf0064109",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
-// Initialize Firebase
-// const app = firebase.initializeApp(firebaseConfig);
 
+// Initialize Firebase
 const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+// Export Firestore and Auth
 const db = firebaseApp.firestore();
 const auth = firebase.auth();
 
-// export const auth = getAuth(app)
 export { db, auth };
-
-// export const db = app.firestore()
-
-
-// export { db, auth };
+  
+  
+  
+  
+  
+  

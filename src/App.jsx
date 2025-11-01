@@ -5,7 +5,10 @@ import React, { useContext, useEffect } from "react";
 import Routing from "./Routing.jsx";
 import { DataContext } from "./Components/DataProvider/DataProvider.jsx";
 import { Type } from "./Utility/action.type.js";
-import { auth } from "./Utility/firebase.js";
+// import { auth } from "./Utility/firebase.js";
+import { db, auth } from "./Utility/firebase.js";
+
+
 
 function App() {
   const [{ user }, dispatch] = useContext(DataContext);

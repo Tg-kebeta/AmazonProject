@@ -13,7 +13,7 @@ import { ClipLoader } from "react-spinners";
 import { db } from "../../Utility/firebase";
 import { useNavigate } from "react-router-dom";
 function Payment() {
-  const [{ user, basket },dispatch] = useContext(DataContext);
+  const [{ user, basket }, dispatch] = useContext(DataContext);
   const totalItem = basket?.reduce((amount, item) => {
     return amount + (item?.amount ?? 0);
   }, 0);
@@ -25,7 +25,7 @@ function Payment() {
   const [processing, setprocessing] = useState();
   const stripe = useStripe();
   const elements = useElements();
-  const navigate =useNavigate()
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     e?.error?.message ? setcardError(e?.error?.message) : setcardError("");
@@ -48,7 +48,7 @@ function Payment() {
           card: elements.getElement(CardElement),
         },
       });
-      const {paymentIntent} = confirmation
+      const { paymentIntent } = confirmation;
       //after the confirmation order firestore database save,clear
 
       await db
@@ -66,7 +66,6 @@ function Payment() {
 
       setprocessing(false);
       navigate("/orders", { state: { msg: "you have placed new order" } });
-
     } catch (error) {
       console.log(error);
       setprocessing(false);
